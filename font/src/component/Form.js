@@ -9,7 +9,7 @@ const Form =()=>{
 
    
     const addBook = async () => {
-       await axios.post(`http://localhost/api/students`, form)
+       await axios.post(`https://api-books-miniproject.herokuapp.com/api/books`, form)
         dispatch({
             type: 'ADD_BOOK', book: {
                 id: books.length > 0 ? books[books.length-1].no+1 : 0,
@@ -27,23 +27,14 @@ return(
             <input
              type="number"
              placeholder="Enter cost" 
-            //  onChange={(e) => dispatch({ type: 'CHANGE_SURNAME', surname: e.target.value })}
-            />
-            {/* <input
-             type="text"
-             placeholder="Enter id" 
-            //  onChange={(e) => dispatch({ type: 'CHANGE_ID', id: e.target.value })}
+             onChange={(e) => dispatch({ type: 'CHANGE_COST', cost: e.target.value })}
             />
             <input
              type="text"
-             placeholder="Enter Major" 
-            //  onChange={(e) => dispatch({ type: 'CHANGE_MAJOR', Major: e.target.value })}
+             placeholder="Enter status" 
+             onChange={(e) => dispatch({ type: 'CHANGE_STATUS', status: e.target.value })}
             />
-            <input
-             type="number"
-             placeholder="Enter GPA" 
-            //  onChange={(e) => dispatch({ type: 'CHANGE_GPA', GPA: e.target.value })}
-            /> */}
+          
             <button onClick ={addBook }>ADD</button>
     </div>
 )
