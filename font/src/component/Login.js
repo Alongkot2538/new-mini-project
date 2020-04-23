@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import Navbar from './Navbar'
+
+import React, { useState } from 'react';
 import auth from '../firebase';
-// import Home from '../Home';
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
+import firebase from 'firebase'
 
-const Login = ({setSession}) => {
-
-    const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+export default function Login({ setSession }) {
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
 
   const handleLogin = async () => {
     try {
@@ -14,7 +14,7 @@ const Login = ({setSession}) => {
         username,
         password
       );
-
+      
       const { user } = response;
 
       setSession({
@@ -51,40 +51,47 @@ const Login = ({setSession}) => {
       });
     }
   };
+  const uiConfig = {
+    signInFlow: "popup",
+    signInOptions: [
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+        // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+        firebase.auth.GithubAuthProvider.PROVIDER_ID,
+        firebase.auth.EmailAuthProvider.PROVIDER_ID
+    ],
+    callbacks: {
+      signInSuccess: () => false
+    }
+  }
 
-  const handleUsername = event => {
-    setUsername(event.target.value);
-  };
+  return (
+    <div className="container" >
+      {/* <p1>{username} {password}</p1> */}
+      <div class="form-inline" style={{marginLeft:"140px"}}>
+        <label for="email">Email address:</label>
+        <input class="form-control"
+         type="email"
+          placeholder="Enter email" 
+          onChange={(e)=>setUsername(e.target.value)}
+        />
+        <label for="pwd">Password:</label>
+        <input 
+        type="password" 
+        class="form-control" 
+        placeholder="Enter password" 
+        onChange={(e)=>setPassword(e.target.value)}
+        />
+        <button style={{marginLeft:"8px"}} class="btn btn-primary" 
+        onClick={handleLogin}>Submit</button>
+        <button style={{marginLeft:"8px"}} 
+          class="btn btn-info" onClick={handleRegister}> Register</button>
+      </div>
+      <StyledFirebaseAuth
+      uiConfig={uiConfig}
+      firebaseAuth={firebase.auth()}
+    />
 
-  const handlePassword = event => {
-    setPassword(event.target.value);
-  };
-    return (
-<div>
-     <div class="container-fluid"><h1>My First Bootstrap Page</h1></div>
-    <div class ="row"></div>
-    
-
-
-
-
-
-
-</div>
-
-
-
-        
-        // <div>
-        //     {/* <Navbar /> */}
-
-        // login
-
-        //     <input type="email" placeholder="E-mail" onChange={handleUsername} />
-        //     <input type="password" placeholder="password" onChange={handlePassword} />
-        //     <button type="button" onClick={handleLogin}>Login</button>
-        //     <button type="button" onClick={handleRegister}>Register</button>
-        // </div>
-    )
+    </div>
+  )
 }
-export default Login;
