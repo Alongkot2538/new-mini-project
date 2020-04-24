@@ -4,7 +4,7 @@ import auth from '../firebase';
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 import firebase from 'firebase'
 import Admin from './Admin'
-export default function Login({ setSession }) {
+export default function Userlogin({ setSession }) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 

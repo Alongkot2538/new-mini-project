@@ -3,6 +3,7 @@ import Login from './Login'
 import auth from '../firebase';
 import Navbar from './Navbar'
 import Books from './Books'
+import Userlogin from './Userlogin'
 
 export default function Admin() {
   const [session, setSession] = useState({
@@ -62,7 +63,7 @@ export default function Admin() {
       ) : (
          //กรณีไม่ได้ login เข้าระบบ
           <div>
-          <Login setSession={setSession} />
+          <Userlogin setSession={setSession} />
          
            
            </div>
