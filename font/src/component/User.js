@@ -5,7 +5,7 @@ import Navbar from './Navbar'
 import Books from './Books'
 import Userlogin from './Userlogin'
 
-export default function Admin() {
+export default function User() {
   const [session, setSession] = useState({
     isLoggedIn: false,
     currentUser: null,

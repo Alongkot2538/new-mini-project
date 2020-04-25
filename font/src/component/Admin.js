@@ -38,10 +38,10 @@ export default function Admin() {
   };
   return (
     <div>
+          {/* <Navbar/> */}
        {session.isLoggedIn ? (
          //กรณี log in สำเร็จ
-        <div>
-          <Navbar/>
+        <div><Navbar/>
           <span>
             <h1>Welcome  {session.currentUser && session.currentUser.displayName}</h1>
             {session.currentUser && session.currentUser.email}
@@ -57,6 +57,10 @@ export default function Admin() {
                
                 onClick={handleLogout}>logout</button>
           <h1>Hello</h1>
+          <Books/>
+
+
+          
         </div>
 
       ) : (

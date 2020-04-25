@@ -5,12 +5,12 @@ const Navbar =()=>{
         <div>
        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   
-  <a class="navbar-brand" href="/">Home</a>
+  <a class="navbar-brand" href="/Index">Home</a>
 
  
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link" href="/login">Login</a>
+      <a class="nav-link" href="/Admin">Login</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Link 2</a>
