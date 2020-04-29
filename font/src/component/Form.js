@@ -31,7 +31,7 @@ return(
             />
             <input
              type="text"
-             placeholder="Enter status" 
+             placeholder="Enter Tel" 
              onChange={(e) => dispatch({ type: 'CHANGE_STATUS', status: e.target.value })}
             />
           

@@ -10,7 +10,7 @@ export default function Userlogin({ setSession }) {
 
   const handleLogin = async () => {
     try {
-      if (username == "5735512161@psu.ac.th" && password == "123456") {
+     
         const response = await auth.signInWithEmailAndPassword(
           username,
           password
@@ -22,7 +22,7 @@ export default function Userlogin({ setSession }) {
           isLoggedIn: true,
           currentUser: user
         });
-      }
+     
     } catch (error) {
       setSession({
         isLoggedIn: false,

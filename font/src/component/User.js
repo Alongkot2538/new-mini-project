@@ -4,6 +4,7 @@ import auth from '../firebase';
 import Navbar from './Navbar'
 import Books from './Books'
 import Userlogin from './Userlogin'
+// import Formuser from './Formuser';
 
 export default function User() {
   const [session, setSession] = useState({
@@ -58,13 +59,14 @@ export default function User() {
                
                 onClick={handleLogout}>logout</button>
           <h1>Hello</h1>
+          {/* <Formuser/> */}
         </div>
 
       ) : (
          //กรณีไม่ได้ login เข้าระบบ
           <div>
           <Userlogin setSession={setSession} />
-         
+        
            
            </div>
         )}

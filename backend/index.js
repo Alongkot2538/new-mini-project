@@ -9,8 +9,8 @@ app.use(cors());
 app.use('/api', bodyParser.json(), router);   //[use json]
 app.use('/api', bodyParser.urlencoded({ extended: false }), router);
 
-let books = [{'id':0,'name':'percy','cost': 300,'status':'true'},
-   {'id':1, 'name':'harry','cost': 350,'status':'true'}
+let books = [{'id':0,'name':'percy','cost': 300,'status':'0898765432'},
+             {'id':1, 'name':'harry','cost': 350,'status':'0871234567'}
 ];
 
 // router.route('/books').get((req, res) =>  res.json(books) );

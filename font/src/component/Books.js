@@ -1,11 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useState,useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios'
 import '../App.css';
 import Form from './Form';
 const Books = (props) => {
     const books = useSelector(state => state.book);
-    const form = useSelector(state => state.form)
+    const form = useSelector(state => state.form);
+    const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+
     const dispatch = useDispatch()
     useEffect(() => {
         getBooks();
@@ -39,7 +42,7 @@ const Books = (props) => {
         if (books && books.length) {
             return books.map((book, index) => {
                 return (
-                    <li key={index}>
+                    <ol key={index}>
                         no: {book.id + 1} :
                         {book.name}  {book.cost} :
                         {book.status}
@@ -49,7 +52,7 @@ const Books = (props) => {
                             <span  className="App3">
                             <button className="btn3" onClick={ ()=>updateBook(book.id)}>Update</button>
                             </span>
-                    </li>
+                    </ol>
                 )
             })
         }
@@ -63,12 +66,10 @@ const Books = (props) => {
         <div>
             
                 {printBooks()}
-                <Form />
-            
+                {/* <Form /> */}
+
         </div>
     )
-
-
 
 }
 export default Books;
