@@ -9,13 +9,13 @@ const Navbar =()=>{
 
  
   <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="/Admin">ข้อมูลส่วนตัว</a>
-    </li>
+   
     <li class="nav-item">
       <a class="nav-link" href="/Sell">Sell</a>
     </li>
-
+    <li class="nav-item">
+      <a class="nav-link" href="/User">Profile</a>
+    </li>
    
   </ul>
 </nav>

@@ -69,6 +69,7 @@ export default function Login({ setSession }) {
     <div className="container" >
       <div className="backgroung">
         {/* <p1>{username} {password}asdas</p1> */}
+        <h1>Admin Login</h1>
         <div class="form-inline" style={{ marginLeft: "140px" }}>
           <label for="email">Email address: </label>
           <input class="form-control"
@@ -84,14 +85,15 @@ export default function Login({ setSession }) {
             onChange={(e) => setPassword(e.target.value)}
           /><br/>
           <button style={{ marginLeft: "8px" }} class="btn btn-primary"
-            onClick={handleLogin}>Submit</button>
-          <button style={{ marginLeft: "8px" }}
-            class="btn btn-info" onClick={handleRegister}> Register</button>
+            onClick={handleLogin}>Sing IN</button>
+
+          <a href="/" style={{marginLeft:"8px"}}>   <button  class="btn btn-info"   > Home</button></a>
+       
         </div>
-        <StyledFirebaseAuth
+        {/* <StyledFirebaseAuth
           uiConfig={uiConfig}
           firebaseAuth={firebase.auth()}
-        />
+        /> */}
 
       </div>
     </div>

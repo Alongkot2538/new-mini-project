@@ -4,6 +4,7 @@ import auth from '../firebase';
 import Navbar from './Navbar'
 import Books from './Books'
 import Update from './Update';
+import Navadmin from './์Navadmin';
 
 export default function Admin() {
   const [session, setSession] = useState({
@@ -42,24 +43,26 @@ export default function Admin() {
           {/* <Navbar/> */}
        {session.isLoggedIn ? (
          //กรณี log in สำเร็จ
-        <div><Navbar/>
-          <span><h1>Hello</h1><br/>
-            <h1>Welcome  {session.currentUser && session.currentUser.displayName}</h1>
+        <div>
+            <Navadmin></Navadmin>
+          <div className="App">
+            <h1>Welcome : admin {session.currentUser && session.currentUser.displayName}</h1>
             {session.currentUser && session.currentUser.email}
-            <br/>
+            <br/><br/>
             <img
                width="180px" height="150px"
               src={session.currentUser && session.currentUser.photoURL}
             />
-          </span>
-          
             <br/><br/>
             <button  
                class="btn btn-primary mb-2"
                 onClick={handleLogout}>logout</button>
+          </div>
+          
+            
           
           {/* <Books/> */}
-          <Update/>
+          {/* <Update/> */}
 
 
           

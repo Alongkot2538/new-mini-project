@@ -10,6 +10,7 @@ export default function index() {
     return (
         <div>
             <Navbar /><br/>
+            <Books/>
            <Form/>
         </div>
     )

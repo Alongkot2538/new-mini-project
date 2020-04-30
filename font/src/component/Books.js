@@ -43,17 +43,13 @@ const Books = (props) => {
         if (books && books.length) {
             return books.map((book, index) => {
                 return (
-                    <ol className="bearcard" key={index}>
-                        Book : {book.id + 1} <br/> Book Name : 
-                        {book.name}<br/> Cost :   {book.cost}<br/> Tel :
-                        {book.status}<br/> 
-                        {/* <span className="App3">
-                            <button className="btn2" onClick={ ()=>deleteBooks(book.id)}>Delete</button>
-                            </span>
-                            <span  className="App3">
-                            <button className="btn3" onClick={ ()=>updateBook(book.id)}>Update</button>
-                            </span> */}
-                    </ol>
+                    <tr>
+                    <td>{index+1}</td>
+                    <td>{book.name}</td>
+                    <td>{book.cost}</td>
+                    <td>{book.status}</td>
+                  
+                   </tr>
                 )
             })
         }
@@ -64,11 +60,20 @@ const Books = (props) => {
 
 
     return (
-        <div class="container">
-            <br />
+        <div class="container" style={{marginTop:"30px"}}>
+            <table className="table table-bordered"  >
+                <tr >
+                  <th>NO.</th>
+                  <th>Name</th>
+                  <th>Cost</th> 
+                  <th>Tel</th>
+                 
+                </tr>
+                {printBooks()}
+            </table>
 
          
-            {printBooks()}
+          
             {/* <Form /> */}
 
         </div>

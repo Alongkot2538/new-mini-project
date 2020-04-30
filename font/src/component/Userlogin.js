@@ -68,7 +68,7 @@ export default function Userlogin({ setSession }) {
   }
 
   return (
-    <div className="container" >
+    <div className="container-sm" >
       <div className="backgroung">
         {/* <p1>{username} {password}asdas</p1> */}
         <div class="form-inline" style={{ marginLeft: "140px" }}>
@@ -86,7 +86,7 @@ export default function Userlogin({ setSession }) {
             onChange={(e) => setPassword(e.target.value)}
           /><br/>
           <button style={{ marginLeft: "8px" }} class="btn btn-primary"
-            onClick={handleLogin}>Submit</button>
+            onClick={handleLogin}>SIGN IN</button>
           <button style={{ marginLeft: "8px" }}
             class="btn btn-info" onClick={handleRegister}> Register</button>
         </div>
@@ -94,7 +94,10 @@ export default function Userlogin({ setSession }) {
           uiConfig={uiConfig}
           firebaseAuth={firebase.auth()}
         />
-
+        <div className="App">
+           <a   href="/">Home</a>
+        </div>
+        
       </div>
     </div>
   )

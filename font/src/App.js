@@ -8,10 +8,11 @@ import Index from './component/Index';
 import User from './component/User';
 import Home from './component/Home'
 import Sell from './component/Sell'
+import Update from './component/Update';
 
 function App() {
   return (
-    <div className="App">
+    <div>
      {/* <Admin/> */}
      <Router>
       <Switch>
@@ -20,6 +21,7 @@ function App() {
         <Route path='/user' exact component={User}/>
         <Route path='/Home' exact component={Home}/>
         <Route path='/Sell' exact component={Sell}/>
+        <Route path='/admin-update' exact component={Update}/>
       </Switch>
 
     </Router>

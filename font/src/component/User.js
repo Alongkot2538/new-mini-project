@@ -42,22 +42,23 @@ export default function User() {
     <div>
        {session.isLoggedIn ? (
          //กรณี log in สำเร็จ
-        <div>
+        <div className="App">
           <Navbar/>
-          <span>
-            <h1>Welcome  {session.currentUser && session.currentUser.displayName}</h1><h1>Hello</h1>
+          <div>
+            <h1>Welcome  {session.currentUser && session.currentUser.displayName}</h1>
             {session.currentUser && session.currentUser.email}
             <br/>
             <img
                width="180px" height="150px"
               src={session.currentUser && session.currentUser.photoURL}
             />
-          </span>
-          
             <br/><br/>
             <button  
                class="btn btn-primary mb-2"
                 onClick={handleLogout}>logout</button>
+          </div>
+          
+            
           
           {/* <Formuser/> */}
         </div>
