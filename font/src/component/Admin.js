@@ -43,7 +43,7 @@ export default function Admin() {
        {session.isLoggedIn ? (
          //กรณี log in สำเร็จ
         <div><Navbar/>
-          <span>
+          <span><h1>Hello</h1><br/>
             <h1>Welcome  {session.currentUser && session.currentUser.displayName}</h1>
             {session.currentUser && session.currentUser.email}
             <br/>
@@ -53,11 +53,11 @@ export default function Admin() {
             />
           </span>
           
-            <br/>
+            <br/><br/>
             <button  
-               
+               class="btn btn-primary mb-2"
                 onClick={handleLogout}>logout</button>
-          <h1>Hello</h1>
+          
           {/* <Books/> */}
           <Update/>
 

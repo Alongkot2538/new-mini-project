@@ -44,9 +44,9 @@ const Books = (props) => {
             return books.map((book, index) => {
                 return (
                     <ol className="bearcard" key={index}>
-                        no: {book.id + 1} :
-                        {book.name}  {book.cost} :
-                        {book.status}
+                        Book : {book.id + 1} <br/> Book Name : 
+                        {book.name}<br/> Cost :   {book.cost}<br/> Tel :
+                        {book.status}<br/> 
                         {/* <span className="App3">
                             <button className="btn2" onClick={ ()=>deleteBooks(book.id)}>Delete</button>
                             </span>

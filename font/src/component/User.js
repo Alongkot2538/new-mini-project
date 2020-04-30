@@ -45,7 +45,7 @@ export default function User() {
         <div>
           <Navbar/>
           <span>
-            <h1>Welcome  {session.currentUser && session.currentUser.displayName}</h1>
+            <h1>Welcome  {session.currentUser && session.currentUser.displayName}</h1><h1>Hello</h1>
             {session.currentUser && session.currentUser.email}
             <br/>
             <img
@@ -54,11 +54,11 @@ export default function User() {
             />
           </span>
           
-            <br/>
+            <br/><br/>
             <button  
-               
+               class="btn btn-primary mb-2"
                 onClick={handleLogout}>logout</button>
-          <h1>Hello</h1>
+          
           {/* <Formuser/> */}
         </div>
 

@@ -19,6 +19,7 @@ const Form = () => {
     }
     return (
         <div class="container">
+            <h2>ADD BOOK</h2>
             <input
                 type="name" class="form-control mb-2 mr-sm-2"
                 placeholder="Enter name"

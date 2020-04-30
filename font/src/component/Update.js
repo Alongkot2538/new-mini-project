@@ -43,14 +43,14 @@ const Update = (props) => {
             return books.map((book, index) => {
                 return (
                     <ol key={index}>
-                        no: {book.id + 1} :
-                        {book.name}  {book.cost} :
-                        {book.status}
+                        Book : {book.id + 1} <br/> Book Name :
+                        {book.name} <br/>  Cost : {book.cost} <br/>Tel.
+                        {book.status}<br/> 
                         <span className="App3">
-                            <button className="btn2" onClick={ ()=>deleteBooks(book.id)}>Delete</button>
-                            </span>
+                            <button class="btn btn-primary mb-2" onClick={ ()=>deleteBooks(book.id)}>Delete</button>
+                            </span><br/> 
                             <span  className="App3">
-                            <button className="btn3" onClick={ ()=>updateBook(book.id)}>Update</button>
+                            <button class="btn btn-primary mb-2" onClick={ ()=>updateBook(book.id)}>Update</button>
                             </span>
                     </ol>
                 )
