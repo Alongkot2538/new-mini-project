@@ -6,16 +6,20 @@ export default function Navadmin() {
             <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 
                
-
+                
 
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Admin">Home</a>
+                <li class="nav-item">
+                        <a class="nav-link" href="/Home-admin">Home</a>
                     </li>
+                    
+
                     <li class="nav-item">
                         <a class="nav-link" href="/admin-update">Edit</a>
                     </li>
-
+                        <li class="nav-item">
+                        <a class="nav-link" href="/Admin">Profile</a>
+                    </li>
 
                 </ul>
             </nav>
