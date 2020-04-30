@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState,useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios'
 import '../App.css';
 import Form from './Form';
-const Books = (props) => {
+const Update = (props) => {
     const books = useSelector(state => state.book);
     const form = useSelector(state => state.form);
     const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
+  const [password, setPassword] = useState('')
 
     const dispatch = useDispatch()
     useEffect(() => {
@@ -27,32 +27,31 @@ const Books = (props) => {
     }
 
     const updateBook = async (books_id) => {
-        await axios.put(`https://api-books-miniproject.herokuapp.com/api/books/${books_id}`, form)
-        dispatch(
-            {
-                type: 'UPDATE_BOOK',
-                id: books_id,
-                book: { ...form, id: books_id }
-            })
-        getBooks()
-
-    }
+        await axios.put(`https://api-books-miniproject.herokuapp.com/api/books/${books_id}`,form)
+         dispatch(
+             {type:'UPDATE_BOOK',
+             id: books_id,
+             book:{...form, id:  books_id}
+         })
+         getBooks()
+         
+       }
 
 
     const printBooks = () => {
         if (books && books.length) {
             return books.map((book, index) => {
                 return (
-                    <ol className="bearcard" key={index}>
+                    <ol key={index}>
                         no: {book.id + 1} :
                         {book.name}  {book.cost} :
                         {book.status}
-                        {/* <span className="App3">
+                        <span className="App3">
                             <button className="btn2" onClick={ ()=>deleteBooks(book.id)}>Delete</button>
                             </span>
                             <span  className="App3">
                             <button className="btn3" onClick={ ()=>updateBook(book.id)}>Update</button>
-                            </span> */}
+                            </span>
                     </ol>
                 )
             })
@@ -64,15 +63,13 @@ const Books = (props) => {
 
 
     return (
-        <div class="container">
-            <br />
-
-         
-            {printBooks()}
-            {/* <Form /> */}
+        <div>
+            
+                {printBooks()}
+                {/* <Form /> */}
 
         </div>
     )
 
 }
-export default Books;
+export default Update;

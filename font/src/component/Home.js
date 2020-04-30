@@ -4,7 +4,7 @@ import auth from '../firebase';
 import Navbar from './Navbar'
 import Books from './Books';
 
-export default function index() {
+export default function Home() {
 
     return (
         <div>

@@ -3,6 +3,7 @@ import Login from './Login'
 import auth from '../firebase';
 import Navbar from './Navbar'
 import Books from './Books'
+import Update from './Update';
 
 export default function Admin() {
   const [session, setSession] = useState({
@@ -58,6 +59,7 @@ export default function Admin() {
                 onClick={handleLogout}>logout</button>
           <h1>Hello</h1>
           {/* <Books/> */}
+          <Update/>
 
 
           
